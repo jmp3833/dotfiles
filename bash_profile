@@ -36,8 +36,5 @@ export ANDROID_HOME="/Users/jpeterson6/Library/Android/sdk"
 
 alias vim='/usr/bin/mvim -v'
 
-export TTO_USER="jpeterson6"
-export TTO_PASSWD="JmP71393"
-
 #Bash completion for git
 source ~/.github_completion.sh
