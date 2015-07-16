@@ -1,3 +1,7 @@
+echo "===================================================================="
+echo "Deps: Vim, Silver searcher (Ag), python and python-dev, git "
+echo "===================================================================="
+
 git config --global user.name "Justin Peterson"
 git config --global user.email jmp3833@rit.edu
 
