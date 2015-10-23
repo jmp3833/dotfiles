@@ -12,6 +12,9 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"Jade syntax hilighting
+Plugin 'digitaltoad/vim-jade.git'
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -28,14 +31,14 @@ set completeopt-=preview
 "Additional autocomplete through YouCompleteMe for JS.
 "Plugin 'marijnh/tern_for_vim'
 
-"Block commenting functionality
-Plugin 'scrooloose/nerdcommenter'
-
 "JS Syntax from http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
+
+"Markdown highlighting
+Plugin 'plasticboy/vim-markdown'
 
 "Handlebars Syntax Hilighting
 Plugin 'mustache/vim-mustache-handlebars'
@@ -59,6 +62,9 @@ Plugin 'edkolev/tmuxline.vim'
 
 " Silver searcher (ag) integration
 Plugin 'rking/ag.vim'
+
+" Block commenting shortcuts
+Plugin 'scrooloose/nerdcommenter'
 
 " Tmuxline config
 let g:tmuxline_preset = {
