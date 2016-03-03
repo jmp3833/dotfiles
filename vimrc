@@ -26,6 +26,7 @@ Plugin 'Valloric/YouCompleteMe'
 "ycm configs.
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
+let g:ycm_path_to_python_interpreter='/Users/justin/.pyenv/versions/2.7/bin/python'
 set completeopt-=preview
 
 "Additional autocomplete through YouCompleteMe for JS.
@@ -39,6 +40,8 @@ Plugin 'Raimondi/delimitMate'
 
 "Markdown highlighting
 Plugin 'plasticboy/vim-markdown'
+
+Plugin 'nvie/vim-flake8'
 
 "Handlebars Syntax Hilighting
 Plugin 'mustache/vim-mustache-handlebars'
@@ -124,6 +127,10 @@ imap <C-c> <CR><Esc>O
 "Set bash to default vim shell
 set shell=/bin/bash
 
+"Highnight lines over 80 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 "easily move between windows without using ctrl-w
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -139,3 +146,20 @@ map <right> <nop>
 "Fuzzy search to ctrl-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+let g:ycm_python_binary_path = '/Users/justin/.pyenv/versions/3.4.3/bin/Python'
+
+let python_highlight_all=1
+syntax on
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+set rtp+=/Users/justin/.pyenv/versions/3.4.3/lib/python3.4/site-packages/powerline/bindings/vim
